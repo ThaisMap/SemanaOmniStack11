@@ -4,7 +4,6 @@ module.exports = {
 
     async create(request, response){
         const ong_id = request.body;
-        console.log(ong_id)
         const ong = await connection('ongs').where('id', ong_id.id).select('name').first();
 
         if(!ong){
